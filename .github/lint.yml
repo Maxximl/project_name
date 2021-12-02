@@ -1,0 +1,21 @@
+# имя которое будет отображаться в интерфейсе
+name: Linting
+
+# список событий, по которым экшен будет запущен
+on:
+  push: # в нашем случае на пуш
+    branches-ignore: # кроме
+        - main #главной ветки
+
+# список того, что нужно делать. каждый job будет выводиться отдельным элементом в UI
+jobs:
+  lint: # уникальный id 
+    runs-on: ubuntu-latest # на какой машине будет запущен
+    steps: # список шагов
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - name: Run the lint script # нужен для отображения в логах
+        run: npm run lint
