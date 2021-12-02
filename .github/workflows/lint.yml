@@ -6,7 +6,7 @@ on:
   push: # в нашем случае на пуш
     branches-ignore: # кроме
         - main #главной ветки
-
+ 
 # список того, что нужно делать. каждый job будет выводиться отдельным элементом в UI
 jobs:
   lint: # уникальный id 
@@ -19,3 +19,4 @@ jobs:
       - run: npm install
       - name: Run the lint script # нужен для отображения в логах
         run: npm run lint
+ 

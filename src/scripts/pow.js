@@ -4,6 +4,7 @@ function pow (x, n) {
     for (let i = 0; i < n; i++) {
         result *= x;
     }
+    
 
     return result;
 }
