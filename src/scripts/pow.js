@@ -1,5 +1,5 @@
 function pow (x, n) {
-    const result = 1;
+    let result = 1;
 
     for (let i = 0; i < n; i++) {
         result += x;
